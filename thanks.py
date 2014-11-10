@@ -1,7 +1,6 @@
 import requests
-import facebook,json,random
+import json,random
 import datetime
-#token = '&access_token=CAACEdEose0cBAITBWAZBY2tv8eA91ngKT3Bs44erpaKohAx1iBUcCd4HYEEHKaPbUJYoMf4FBIZAMEZBDoo9xjUSmX8FbsFezuHic4SGcJEGTKbV8BXZB8DzzXdv7JQ0OTI7bVFEfOEPy7Ixk33c8Fwm6Ds3GEWUsoghiOfaS10M3KnkzsQvKr281AInjU4PO6fJS8cyswZDZD'
 print("Enter your Auth token")
 token = str(raw_input("> "))
 print ("Enter your birth month (1-12")
@@ -24,3 +23,4 @@ for status in feed['data']:
 	r=requests.post(url+status['id']+'/comments?method=POST'+token,params=dict)
 	r = requests.post(url+status['id']+'/likes?method=POST'+token)
 	print r.text
+
